@@ -7,7 +7,8 @@ This is where the script will be which should check on the following:
 
     Autoremove old packages
 
-    Ports: 80, 443, 22, 3000, 3001
+    Ports: 80, 443, 22, 3000, 3001 , 5000
+    
 '''
 import os
 
