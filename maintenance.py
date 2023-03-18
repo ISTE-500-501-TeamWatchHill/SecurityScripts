@@ -3,10 +3,13 @@ import socket
 
 
 def check_sestatus():
+    """
+    Installing policycoreutils may be required.
+    """
     sestatus = "sudo sestatus"
     sestatus_result = os.system(sestatus)
 
-    print("SE Status Result: " + sestatus_result)
+    print("SE Status Result: " + str(sestatus_result))
 
 
 def check_ports():
