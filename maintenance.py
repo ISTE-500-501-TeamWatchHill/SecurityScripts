@@ -1,16 +1,5 @@
-'''
-TODO
-This is where the script will be which should check on the following:
-    SE Linux is enabled.
-
-    Make sure the host is updating.
-
-    Autoremove old packages
-
-    Ports: 80, 443, 22, 3000, 3001 , 5000
-    
-'''
 import os
+import socket
 
 
 def check_sestatus():
@@ -22,6 +11,23 @@ def check_sestatus():
 
 def check_ports():
     open_ports = [80, 443, 22, 3000, 3001, 5000]
+
+    for port in open_ports:
+        a_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        location = ("127.0.0.1", port)
+
+        result_of_check = a_socket.connect_ex(location)
+
+        if result_of_check == 0:
+
+            print(port + " is open")
+
+        else:
+
+            print(port + " is not open")
+
+        a_socket.close()
 
 
 def check_update():
@@ -35,6 +41,7 @@ def check_update():
     print("Upgrade Result: " + update_result + "\n" + "Upgrade Result: " +
           upgrade_result + "\n" + "Autoremove Result: " + autoremove_result)
 
-# check_sestatus()
-# check_ports()
-# check_update()
+
+check_sestatus()
+check_ports()
+check_update()
