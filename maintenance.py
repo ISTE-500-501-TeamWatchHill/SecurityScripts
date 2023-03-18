@@ -24,11 +24,11 @@ def check_ports():
 
         if result_of_check == 0:
 
-            print(port + " is open")
+            print(str(port) + " is open")
 
         else:
 
-            print(port + " is not open")
+            print(str(port) + " is not open")
 
         a_socket.close()
 
@@ -41,8 +41,8 @@ def check_update():
     upgrade_result = os.system(upgrade)
     autoremove_result = os.system(autoremove)
 
-    print("Upgrade Result: " + update_result + "\n" + "Upgrade Result: " +
-          upgrade_result + "\n" + "Autoremove Result: " + autoremove_result)
+    print("Upgrade Result: " + str(update_result) + "\n" + "Upgrade Result: " +
+          str(upgrade_result) + "\n" + "Autoremove Result: " + str(autoremove_result))
 
 
 check_sestatus()
