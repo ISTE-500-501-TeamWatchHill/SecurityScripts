@@ -9,7 +9,7 @@ def check_sestatus():
     sestatus = "sudo sestatus"
     sestatus_result = os.system(sestatus)
 
-    print("SE Status Result: " + str(sestatus_result))
+    print("SE Status Result: " + str(sestatus_result).strip())
 
 
 def check_ports():
