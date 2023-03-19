@@ -34,9 +34,9 @@ def check_ports():
 
 
 def check_update():
-    update = "sudo apt-get -y update"
-    upgrade = "sudo apt-get -y upgrade"
-    autoremove = "sudo apt-get -y autoremove"
+    update = "sudo apt-get -yq update"
+    upgrade = "sudo apt-get -yq upgrade"
+    autoremove = "sudo apt-get -yq autoremove"
     update_result = os.system(update)
     upgrade_result = os.system(upgrade)
     autoremove_result = os.system(autoremove)
