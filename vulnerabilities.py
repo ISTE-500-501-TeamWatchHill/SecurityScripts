@@ -17,29 +17,29 @@ import os
 
 def list_users():
     list_results = os.system("getent passwd")
-    print("System Users: \n" + list_results)
+    print("System Users: \n" + str(list_results))
 
 # List Open Ports
 
 
 def open_ports():
     ports_list = os.system("sudo cat /etc/services | less")
-    print("Open ports: \n" + ports_list)
+    print("Open ports: \n" + str(ports_list))
 
 
 def running_process():
     proc_list = os.system("sudo ps ax")
-    print("Running processes: \n" + proc_list)
+    print("Running processes: \n" + str(proc_list))
 
 
 def list_lsof():
     lsof_results = os.system("sudo lsof")
-    print("Open files: \n" + lsof_results)
+    print("Open files: \n" + str(lsof_results))
 
 
 def run_maintenance():
     main_result = os.system("sudo python3 maintenance.py")
-    print("Results from maintenace script: \n" + main_result)
+    print("Results from maintenace script: \n" + str(main_result))
 
 
 list_users()
